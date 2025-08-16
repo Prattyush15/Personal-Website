@@ -17,7 +17,7 @@ export const projects: Project[] = [
     image: "/images/projects/strava-viz.jpg",
     technologies: ["Python", "Streamlit", "Plotly", "NumPy", "pandas", "Strava API"],
     github: "https://github.com/Prattyush15/strava-viz",
-    live: "https://strava-viz.streamlit.app",
+    live: "https://stravaviz.streamlit.app/",
     featured: true
   },
   {

@@ -4,7 +4,7 @@ export const profile = {
   email: "prattyushgiriraj@gmail.com",
   github: "https://github.com/Prattyush15",
   linkedin: "https://www.linkedin.com/in/prattyush-giriraj/",
-  bio: "I’ve shipped projects at Fortune 500 companies, from real-time dashboards to asset inventory systems, always focused on solving real problems. I love creating tools that streamline workflows, reveal insights, and help people act on great ideas.",
+  bio: "I’ve shipped products/features at Fortune 500 companies, from real-time dashboards to asset inventory systems, always focused on solving real problems. I love creating tools that streamline workflows, reveal insights, and help people act on great ideas.",
   bio2: "Outside of work, you’ll find me rock climbing, running, weightlifting, doing origami, or traveling.",
   avatar: "/images/avatar.jpg",
   location: "Cincinnati, OH",

@@ -6,6 +6,7 @@ import { Github, Linkedin, Mail, Download, Code, User, Briefcase, FolderOpen, Fi
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -29,10 +30,10 @@ export default function Home() {
 
   // Gallery images for About section
   const galleryImages = [
-    { src: "/images/avatar.jpg", alt: "Avatar" },
+    { src: "/images/avatar.jpg", alt: "My Face" },
     { src: "/images/pm/bdaa.jpg", alt: "BDAA " },
-    { src: "/images/pm/switchboard-thumb.jpg", alt: "Switchboard Project" },
-    { src: "/images/pm/workspace-thumb.jpg", alt: "Workspace Project" },
+    { src: "/images/pm/peru.jpg", alt: "Peru" },
+    { src: "/images/pm/run.jpg", alt: "Running" },
   ];
   const [galleryIndex, setGalleryIndex] = useState(0);
   const nextImage = () => setGalleryIndex((galleryIndex + 1) % galleryImages.length);
@@ -177,7 +178,7 @@ export default function Home() {
               About Me
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              A quick look at me and the skills I’m most confident showcasing.
+              A quick snapshot of who I am and the skills I excel at.
             </p>
           </motion.div>
           {/* Gallery Carousel - Full width above skills */}
@@ -187,11 +188,12 @@ export default function Home() {
             viewport={{ once: true }}
             className="flex flex-col items-center justify-center mb-10"
           >
-            <div className="relative w-80 h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 mb-4">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 mb-4">
               <Image
                 src={galleryImages[galleryIndex].src}
                 alt={galleryImages[galleryIndex].alt}
                 fill
+                quality={100}
                 className="object-cover transition-all duration-300"
                 priority
               />
@@ -235,15 +237,57 @@ export default function Home() {
               <h3 className="text-xl font-semibold mb-2 text-foreground">
                 Top PM Skills
               </h3>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="outline" className="text-sm glow-green" title="Led 6 cross-functional teams from ideation to delivery using Agile sprints">Agile</Badge>
-                <Badge variant="outline" className="text-sm glow-green" title="Created product roadmaps aligning business goals and technical feasibility">Roadmaps</Badge>
-                <Badge variant="outline" className="text-sm glow-green" title="Conducted 30+ interviews and surveys to guide product features">User Research</Badge>
-                <Badge variant="outline" className="text-sm glow-green" title="Facilitated 40+ stakeholder meetings to align on priorities and unblock progress">Stakeholder Communications</Badge>
-                <Badge variant="outline" className="text-sm glow-green" title="Designed and ran experiments to validate features and improve conversion rates">A/B Testing</Badge>
-                <Badge variant="outline" className="text-sm glow-green" title="Developed analytics to track KPIs and inform product decisions">Product Analytics</Badge>
+              <div className="flex flex-wrap gap-2 md:gap-3">
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button type="button">
+                      <Badge variant="outline" className="text-sm glow-green">Agile</Badge>
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" sideOffset={16}>Led 6 cross-functional teams from ideation to delivery using Agile sprints</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button type="button">
+                      <Badge variant="outline" className="text-sm glow-green">Roadmaps</Badge>
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" sideOffset={16}>Created product roadmaps aligning business goals and technical feasibility</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button type="button">
+                      <Badge variant="outline" className="text-sm glow-green">User Research</Badge>
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" sideOffset={16}>Conducted 30+ interviews and surveys to guide product features</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button type="button">
+                      <Badge variant="outline" className="text-sm glow-green">Stakeholder Communications</Badge>
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" sideOffset={16}>Facilitated 40+ stakeholder meetings to align on priorities and unblock progress</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button type="button">
+                      <Badge variant="outline" className="text-sm glow-green">A/B Testing</Badge>
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" sideOffset={16}>Designed and ran experiments to validate features and improve conversion rates</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button type="button">
+                      <Badge variant="outline" className="text-sm glow-green">Product Analytics</Badge>
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" sideOffset={16}>Developed analytics to track KPIs and inform product decisions</TooltipContent>
+                </Tooltip>
               </div>
-              <p className="text-xs text-muted-foreground mt-1">(Hover over a skill to see more info)</p>
+              <p className="text-xs text-muted-foreground mt-1 hidden md:block">(Hover or tap a skill to see more info)</p>
             </motion.div>
             {/* Top Technical Skills */}
             <motion.div
@@ -255,16 +299,65 @@ export default function Home() {
               <h3 className="text-xl font-semibold mb-2 text-foreground">
                 Top Technical Skills
               </h3>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="outline" className="text-sm glow-green" title="Wrote 100+ SQL queries to analyze product performance and operations">SQL</Badge>
-                <Badge variant="outline" className="text-sm glow-green" title="Built interactive dashboards and automation scripts for analytics">Python</Badge>
-                <Badge variant="outline" className="text-sm glow-green" title="Deployed scalable data solutions and API integrations">AWS</Badge>
-                <Badge variant="outline" className="text-sm glow-green" title="Developed internal data tools for real-time visualization">Streamlit</Badge>
-                <Badge variant="outline" className="text-sm glow-green" title="Optimized ETL pipelines using pandas for 35% better data accuracy">pandas</Badge>
-                <Badge variant="outline" className="text-sm glow-green" title="Created visual reports to communicate insights to stakeholders">Plotly</Badge>
-                <Badge variant="outline" className="text-sm glow-green" title="Integrated machine learning models into production-ready pipelines">Docker</Badge>
+              <div className="flex flex-wrap gap-2 md:gap-3">
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button type="button">
+                      <Badge variant="outline" className="text-sm glow-green">SQL</Badge>
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" sideOffset={16}>Wrote 100+ SQL queries to analyze product performance and operations</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button type="button">
+                      <Badge variant="outline" className="text-sm glow-green">Python</Badge>
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" sideOffset={16}>Built interactive dashboards and automation scripts for analytics</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button type="button">
+                      <Badge variant="outline" className="text-sm glow-green">AWS</Badge>
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" sideOffset={16}>Deployed scalable data solutions and API integrations</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button type="button">
+                      <Badge variant="outline" className="text-sm glow-green">Streamlit</Badge>
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" sideOffset={16}>Developed internal data tools for real-time visualization</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button type="button">
+                      <Badge variant="outline" className="text-sm glow-green">pandas</Badge>
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" sideOffset={16}>Optimized ETL pipelines using pandas for 35% better data accuracy</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button type="button">
+                      <Badge variant="outline" className="text-sm glow-green">Plotly</Badge>
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" sideOffset={16}>Created visual reports to communicate insights to stakeholders</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button type="button">
+                      <Badge variant="outline" className="text-sm glow-green">Docker</Badge>
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" sideOffset={16}>Integrated machine learning models into production-ready pipelines</TooltipContent>
+                </Tooltip>
               </div>
-              <p className="text-xs text-muted-foreground mt-1">(Hover over a skill to see more info)</p>
+              <p className="text-xs text-muted-foreground mt-1 hidden md:block">(Hover or tap a skill to see more info)</p>
             </motion.div>
           </div>
         </div>
@@ -284,7 +377,7 @@ export default function Home() {
               Professional Experience
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              My journey through product management and data engineering/analytics roles
+              My journey through product management and data engineering/analytics internships
             </p>
           </motion.div>
           <div className="max-w-4xl mx-auto grid grid-cols-1 gap-8">
@@ -321,6 +414,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center items-start">
             {projects.map((project, index) => (
               <ProjectCard
+                key={project.id}
                 project={project}
                 index={index}
                 open={openProjects[index]}
@@ -350,6 +444,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center items-start">
             {pmPortfolio.map((item, index) => (
               <PMCard
+                key={item.id}
                 item={item}
                 index={index}
                 open={openPMs[index]}
@@ -362,18 +457,18 @@ export default function Home() {
 
       {/* Resume Section */}
       <Section id="resume" className="py-10 bg-card/30">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-2 sm:px-4 max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 accent-gold">
               <FileText className="inline h-8 w-8 mr-3 text-primary" />
               Resume
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-base md:text-lg max-w-2xl mx-auto">
               Download my resume or view it below
             </p>
           </motion.div>
@@ -386,11 +481,11 @@ export default function Home() {
             <Card
               className={`border-border bg-card/50 backdrop-blur-sm rounded-8 transition-all duration-300 flex ${resumeOpen ? '' : 'items-center'}`}
             >
-              <CardContent className="p-8">
+              <CardContent className="p-4 md:p-8">
                 <div className="flex flex-col items-center justify-center gap-4 mb-8 text-center h-full w-full">
                   <Button
-                    size="lg"
-                    className="focus-ring rounded-8 glow-green"
+                    size="sm"
+                    className="md:size-lg focus-ring rounded-8 glow-green"
                     asChild
                   >
                     <motion.a
@@ -405,8 +500,9 @@ export default function Home() {
                     </motion.a>
                   </Button>
                   <Button
-                    size="lg"
-                    className="focus-ring rounded-8 glow-green"
+                    variant="default"
+                    size="sm"
+                    className="rounded-8 glow-green hidden md:block"
                     onClick={() => setResumeOpen((open) => !open)}
                     aria-expanded={resumeOpen}
                     aria-controls="resume-iframe"

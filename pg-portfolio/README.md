@@ -2,19 +2,19 @@
 
 A modern, responsive personal portfolio built with Next.js 14, TypeScript, and Tailwind CSS. Features smooth animations, dark theme, and a complete product management portfolio showcase.
 
-## 🚀 Features
+## Features
 
-- **Modern Tech Stack**: Next.js 14 (App Router), TypeScript, Tailwind CSS
-- **Responsive Design**: Mobile-first approach with seamless desktop experience
-- **Dark Theme**: Custom dark theme with beautiful color palette
-- **Smooth Animations**: Framer Motion animations and smooth scroll behavior
-- **Component Library**: shadcn/ui components for consistent design
-- **SEO Optimized**: Complete meta tags, sitemap, and robots.txt
-- **Contact Form**: Functional contact form with validation
-- **PM Portfolio**: Interactive case studies with Figma embeds
-- **Performance**: Optimized images and fonts for fast loading
+- Modern Tech Stack: Next.js 14 (App Router), TypeScript, Tailwind CSS
+- Responsive Design: Mobile-first approach with seamless desktop experience
+- Dark Theme: Custom dark theme with beautiful color palette
+- Smooth Animations: Framer Motion animations and smooth scroll behavior
+- Component Library: shadcn/ui components for consistent design
+- SEO Optimized: Complete meta tags, sitemap, and robots.txt
+- Contact Form: Functional contact form with validation
+- PM Portfolio: Interactive case studies with Figma embeds
+- Performance: Optimized images and fonts for fast loading
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - [Next.js 14](https://nextjs.org/) - React framework with App Router
 - [TypeScript](https://www.typescriptlang.org/) - Type safety
@@ -25,22 +25,22 @@ A modern, responsive personal portfolio built with Next.js 14, TypeScript, and T
 - [Zod](https://zod.dev/) - Form validation
 - [next-seo](https://github.com/garmeeh/next-seo) - SEO optimization
 
-## 🎨 Design System
+## Design System
 
 ### Color Palette
-- **Background**: `#0c0f0f` - Deep dark background
-- **Surface**: `#121515` - Card and section backgrounds  
-- **Text**: `#e8f0ec` - Primary text color
-- **Muted**: `#a7b0ab` - Secondary text color
-- **Primary**: `#22c55e` - Green accent color
-- **Accent**: `#34d399` - Light green highlights
+- Background: `#0c0f0f` - Deep dark background
+- Surface: `#121515` - Card and section backgrounds  
+- Text: `#e8f0ec` - Primary text color
+- Muted: `#a7b0ab` - Secondary text color
+- Primary: `#22c55e` - Green accent color
+- Accent: `#34d399` - Light green highlights
 
 ### Typography
-- **Font**: Inter (Google Fonts)
-- **Spacing**: Generous padding and margins
-- **Borders**: Rounded corners (rounded-2xl)
+- Font: Inter (Google Fonts)
+- Spacing: Generous padding and margins
+- Borders: Rounded corners (rounded-2xl)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
@@ -71,7 +71,7 @@ src/
     └── utils.ts        # Utility functions
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 18+ 
@@ -102,24 +102,24 @@ src/
 4. **Open in browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 📝 Customization
+## Customization
 
 ### Personal Information
 Edit the files in `/src/data/` to customize:
 
-- **Profile**: Update `src/data/profile.ts` with your information
-- **Experience**: Modify `src/data/experience.ts` with your work history
-- **Projects**: Update `src/data/projects.ts` with your coding projects
-- **PM Portfolio**: Edit `src/data/pm.ts` with your product management work
+- Profile: Update `src/data/profile.ts` with your information
+- Experience: Modify `src/data/experience.ts` with your work history
+- Projects: Update `src/data/projects.ts` with your coding projects
+- PM Portfolio: Edit `src/data/pm.ts` with your product management work
 
 ### Assets
 Replace placeholder assets in `/public/`:
 
-- **Avatar**: Replace `public/images/avatar.jpg` with your photo
-- **Resume**: Replace `public/Prattyush_Giriraj_Resume.pdf` with your actual resume
-- **Project Images**: Update images in `public/images/projects/`
-- **Company Logos**: Update logos in `public/images/logos/`
-- **PM Thumbnails**: Update images in `public/images/pm/`
+- Avatar: Replace `public/images/avatar.jpg` with your photo
+- Resume: Replace `public/Prattyush_Giriraj_Resume.pdf` with your actual resume
+- Project Images: Update images in `public/images/projects/`
+- Company Logos: Update logos in `public/images/logos/`
+- PM Thumbnails: Update images in `public/images/pm/`
 
 ### Contact Form
 The contact form currently logs submissions. To enable email sending:
@@ -133,7 +133,7 @@ To add Figma prototypes to PM portfolio:
 1. Get your Figma file key from the URL
 2. Update `figmaFileKey` in `src/data/pm.ts`
 
-## 🚀 Deployment
+## Deployment
 
 ### Vercel (Recommended)
 
@@ -160,7 +160,7 @@ The portfolio is a standard Next.js app and can be deployed to:
 - DigitalOcean App Platform
 - AWS Amplify
 
-## 🔧 Environment Variables
+## Environment Variables
 
 For email functionality, add these to your environment:
 
@@ -168,21 +168,17 @@ For email functionality, add these to your environment:
 RESEND_API_KEY=your_resend_api_key_here
 ```
 
-## 📄 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 🤝 Contributing
+## Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
 
-## 📞 Contact
+## Contact
 
 Prattyush Giriraj
 - Email: [prattyushgiriraj@gmail.com](mailto:prattyushgiriraj@gmail.com)
 - LinkedIn: [prattyush-giriraj](https://www.linkedin.com/in/prattyush-giriraj/)
 - GitHub: [Prattyush15](https://github.com/Prattyush15)
-
----
-
-Built with ❤️ using Next.js and deployed on Vercel.

@@ -4,14 +4,14 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/data/profile";
 
 const navigation = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "#projects" },
+  { name: "Coding Projects", href: "#projects" },
   { name: "PM Portfolio", href: "#pm-portfolio" },
   { name: "Resume", href: "#resume" },
 ];
@@ -65,7 +65,7 @@ export function Header() {
     >
       <div className="container mx-auto px-4 h-16 flex items-center relative">
         {/* Centered Navigation */}
-        <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center space-x-8">
+        <nav className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center space-x-8">
           {navigation.map((item) => (
             <motion.a
               key={item.name}
@@ -82,7 +82,7 @@ export function Header() {
             </motion.a>
           ))}
         </nav>
-        {/* Social Links (Desktop) + Theme Toggle */}
+        {/* Theme Toggle & Social Links (Desktop) */}
         <div className="hidden md:flex items-center space-x-6 ml-auto">
           {socialLinks.map((link) => (
             <a
@@ -109,15 +109,16 @@ export function Header() {
           )}
         </div>
         {/* Mobile Menu */}
-        <div className="flex items-center space-x-4 md:hidden ml-auto">
+        <div className="flex md:hidden items-center space-x-4 ml-auto">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="focus-ring">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              {/* Social Links (Mobile) + Theme Toggle */}
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background/95 backdrop-blur py-8">
+              <SheetTitle className="sr-only">Mobile Navigation</SheetTitle>
+              {/* Social Links (Mobile) */}
               <div className="flex justify-center space-x-8 mb-8 mt-2">
                 {socialLinks.map((link) => (
                   <a
@@ -143,7 +144,7 @@ export function Header() {
                   </Button>
                 )}
               </div>
-              <nav className="flex flex-col space-y-6 mt-6">
+              <nav className="flex flex-col items-center space-y-6 mt-8">
                 {navigation.map((item) => (
                   <motion.a
                     key={item.name}
@@ -152,7 +153,7 @@ export function Header() {
                       e.preventDefault();
                       scrollToSection(item.href);
                     }}
-                    className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                    className="text-xl font-semibold text-center text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
                     whileHover={{ x: 8 }}
                     whileTap={{ x: 0 }}
                   >
