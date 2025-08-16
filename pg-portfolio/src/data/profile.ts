@@ -1,11 +1,11 @@
 export const profile = {
   name: "Prattyush Giriraj",
-  tagline: "I’m a student exploring product, data, and the systems that connect them.",
+  tagline: "Senior at OSU building products that connect data, tech, and people.",
   email: "prattyushgiriraj@gmail.com",
   github: "https://github.com/Prattyush15",
   linkedin: "https://www.linkedin.com/in/prattyush-giriraj/",
-  bio: "I’ve shipped tools at Fortune 500 companies that range from real-time pipeline observability dashboards to centralized inventory systems—sometimes to move fast, sometimes to scale, always to solve something real. I’m especially drawn to products that simplify workflows, surface insight, and help people act on good ideas.",
-  bio2: "Outside of work, you’ll find me rock climbing, running, folding origami, or exploring new places.",
+  bio: "I’ve shipped projects at Fortune 500 companies, from real-time dashboards to asset inventory systems, always focused on solving real problems. I love creating tools that streamline workflows, reveal insights, and help people act on great ideas.",
+  bio2: "Outside of work, you’ll find me rock climbing, running, weightlifting, doing origami, or traveling.",
   avatar: "/images/avatar.jpg",
   location: "Cincinnati, OH",
   resumeUrl: "/Prattyush_Giriraj_Resume.pdf"
