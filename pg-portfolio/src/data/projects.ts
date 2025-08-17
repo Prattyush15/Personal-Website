@@ -18,7 +18,7 @@ export const projects: Project[] = [
     technologies: ["Python", "Streamlit", "Plotly", "NumPy", "pandas", "Strava API"],
     github: "https://github.com/Prattyush15/strava-viz",
     live: "https://stravaviz.streamlit.app/",
-    featured: true
+    featured: false
   },
   {
     id: "manga-reader",
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     technologies: ["React", "TypeScript", "Node.js", "Tailwind CSS", "MangaDex API", "Vercel"],
     github: "https://github.com/Prattyush15/manga-reader",
     live: "https://manga-reader-rose.vercel.app/",
-    featured: true
+    featured: false
   },
   {
     id: "anime-match",

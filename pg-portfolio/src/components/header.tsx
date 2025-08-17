@@ -11,14 +11,15 @@ import { profile } from "@/data/profile";
 const navigation = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
-  { name: "Coding Projects", href: "#projects" },
   { name: "PM Portfolio", href: "#pm-portfolio" },
-  { name: "Resume", href: "#resume" },
+  { name: "Coding Projects", href: "#projects" },
 ];
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  let lastScrollY = 0;
 
   const socialLinks = [
     { name: "GitHub", href: profile.github, icon: Github },
@@ -30,6 +31,12 @@ export function Header() {
     setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      if (window.scrollY > lastScrollY && window.scrollY > 80) {
+        setShowHeader(false); // scrolling down
+      } else {
+        setShowHeader(true); // scrolling up
+      }
+      lastScrollY = window.scrollY;
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -61,7 +68,7 @@ export function Header() {
         isScrolled
           ? "bg-background/80 backdrop-blur-md border-b border-border"
           : "bg-transparent"
-      }`}
+      } ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className="container mx-auto px-4 h-16 flex items-center relative">
         {/* Centered Navigation */}

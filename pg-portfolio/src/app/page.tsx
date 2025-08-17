@@ -120,20 +120,20 @@ export default function Home() {
               <Button
                 variant="outline"
                 size="lg"
-                onClick={() => scrollToSection("#projects")}
-                className="focus-ring rounded-8 glow-green"
-              >
-                <Code className="h-5 w-5 mr-2" />
-                View Projects
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
                 onClick={() => scrollToSection("#pm-portfolio")}
                 className="focus-ring rounded-8 glow-green"
               >
                 <Briefcase className="h-5 w-5 mr-2" />
-                PM Portfolio
+                View PM Portfolio
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => scrollToSection("#projects")}
+                className="focus-ring rounded-8 glow-green"
+              >
+                <Code className="h-5 w-5 mr-2" />
+                View Coding Projects
               </Button>
 
             </motion.div>
@@ -178,8 +178,9 @@ export default function Home() {
               About Me
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              A quick snapshot of who I am and the skills I excel at.
+              A quick look at me and my background.
             </p>
+            <div className="mb-8" />
           </motion.div>
           {/* Gallery Carousel - Full width above skills */}
           <motion.div
@@ -188,7 +189,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="flex flex-col items-center justify-center mb-10"
           >
-            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 mb-4">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 mb-4 shadow-xl border border-border mx-auto flex items-center justify-center">
               <Image
                 src={galleryImages[galleryIndex].src}
                 alt={galleryImages[galleryIndex].alt}
@@ -199,19 +200,19 @@ export default function Home() {
               />
               <button
                 onClick={prevImage}
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 rounded-full p-2 shadow-lg hover:bg-black/80 border border-white"
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 text-foreground rounded-full p-2 shadow-lg border border-border hover:bg-primary/20 transition-colors focus:outline-none"
                 aria-label="Previous image"
                 style={{ zIndex: 2 }}
               >
-                <svg width="24" height="24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 2px #0008)' }}><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 rounded-full p-2 shadow-lg hover:bg-black/80 border border-white"
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 text-foreground rounded-full p-2 shadow-lg border border-border hover:bg-primary/20 transition-colors focus:outline-none"
                 aria-label="Next image"
                 style={{ zIndex: 2 }}
               >
-                <svg width="24" height="24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 2px #0008)' }}><polyline points="9 18 15 12 9 6"></polyline></svg>
+                <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </button>
             </div>
             <div className="flex gap-2 mt-2">
@@ -225,141 +226,60 @@ export default function Home() {
               ))}
             </div>
           </motion.div>
-          {/* Skills and Info - Single column */}
-          <div className="space-y-8">
-            {/* Top PM Skills */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+          {/* Resume Section (moved here, no header, smaller box) */}
+          <div className="flex flex-col items-center justify-center gap-3 text-center w-full mb-4">
+            <p className="text-xl md:text-lg text-muted-foreground mb-4 text-center">
+              You can view or download my resume below.
+            </p>
+            <Button
+              size="lg"
+              className="focus-ring rounded-8 glow-green w-full md:w-auto px-8 py-3 text-lg"
+              asChild
             >
-              <h3 className="text-xl font-semibold mb-2 text-foreground">
-                Top PM Skills
-              </h3>
-              <div className="flex flex-wrap gap-2 md:gap-3">
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button type="button">
-                      <Badge variant="outline" className="text-sm glow-green">Agile</Badge>
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom" sideOffset={16}>Led 6 cross-functional teams from ideation to delivery using Agile sprints</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button type="button">
-                      <Badge variant="outline" className="text-sm glow-green">Roadmaps</Badge>
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom" sideOffset={16}>Created product roadmaps aligning business goals and technical feasibility</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button type="button">
-                      <Badge variant="outline" className="text-sm glow-green">User Research</Badge>
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom" sideOffset={16}>Conducted 30+ interviews and surveys to guide product features</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button type="button">
-                      <Badge variant="outline" className="text-sm glow-green">Stakeholder Communications</Badge>
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom" sideOffset={16}>Facilitated 40+ stakeholder meetings to align on priorities and unblock progress</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button type="button">
-                      <Badge variant="outline" className="text-sm glow-green">A/B Testing</Badge>
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom" sideOffset={16}>Designed and ran experiments to validate features and improve conversion rates</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button type="button">
-                      <Badge variant="outline" className="text-sm glow-green">Product Analytics</Badge>
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom" sideOffset={16}>Developed analytics to track KPIs and inform product decisions</TooltipContent>
-                </Tooltip>
-              </div>
-              <p className="text-xs text-muted-foreground mt-1 hidden md:block">(Hover a skill to see more info)</p>
-            </motion.div>
-            {/* Top Technical Skills */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              <motion.a
+                href={profile.resumeUrl}
+                download
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center space-x-2"
+              >
+                <Download className="h-5 w-5" />
+                <span>Download Resume</span>
+              </motion.a>
+            </Button>
+            <Button
+              variant="default"
+              size="lg"
+              className="rounded-8 glow-green w-full md:w-auto px-8 py-3 text-lg"
+              onClick={() => setResumeOpen((open) => !open)}
+              aria-expanded={resumeOpen}
+              aria-controls="resume-iframe"
             >
-              <h3 className="text-xl font-semibold mb-2 text-foreground">
-                Top Technical Skills
-              </h3>
-              <div className="flex flex-wrap gap-2 md:gap-3">
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button type="button">
-                      <Badge variant="outline" className="text-sm glow-green">SQL</Badge>
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom" sideOffset={16}>Wrote 100+ SQL queries to analyze product performance and operations</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button type="button">
-                      <Badge variant="outline" className="text-sm glow-green">Python</Badge>
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom" sideOffset={16}>Built interactive dashboards and automation scripts for analytics</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button type="button">
-                      <Badge variant="outline" className="text-sm glow-green">AWS</Badge>
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom" sideOffset={16}>Deployed scalable data solutions and API integrations</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button type="button">
-                      <Badge variant="outline" className="text-sm glow-green">Streamlit</Badge>
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom" sideOffset={16}>Developed internal data tools for real-time visualization</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button type="button">
-                      <Badge variant="outline" className="text-sm glow-green">pandas</Badge>
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom" sideOffset={16}>Optimized ETL pipelines using pandas for 35% better data accuracy</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button type="button">
-                      <Badge variant="outline" className="text-sm glow-green">Plotly</Badge>
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom" sideOffset={16}>Created visual reports to communicate insights to stakeholders</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button type="button">
-                      <Badge variant="outline" className="text-sm glow-green">Docker</Badge>
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom" sideOffset={16}>Integrated machine learning models into production-ready pipelines</TooltipContent>
-                </Tooltip>
-              </div>
-              <p className="text-xs text-muted-foreground mt-1 hidden md:block">(Hover a skill to see more info)</p>
-            </motion.div>
+              {resumeOpen ? "Hide Resume" : "View Resume"}
+            </Button>
           </div>
+          {resumeOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex justify-center mb-8"
+            >
+              <Card className="max-w-4xl w-full border-border bg-card/50 backdrop-blur-sm rounded-8 transition-all duration-300 flex flex-col items-center mx-auto shadow-lg p-6">
+                <CardContent className="p-4 w-full">
+                  <iframe
+                    src={`${profile.resumeUrl}#toolbar=0&view=fitH`}
+                    width="100%"
+                    height="400"
+                    className="rounded-lg border border-border"
+                    title="Resume PDF"
+                    style={{ minWidth: 0, border: 'none' }}
+                  />
+                </CardContent>
+              </Card>
+            </motion.div>
+          )}
+          {/* Skills and Info - Single column */}
+          {/* Removed skills/info section as requested */}
         </div>
       </Section>
 
@@ -394,36 +314,6 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Projects Section */}
-      <Section id="projects" className="py-10">
-        <div className="max-w-4xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-8"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 accent-gold">
-              <Code className="inline h-8 w-8 mr-3 accent-gold" />
-              Coding Projects
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              A showcase of technical projects I&apos;ve built
-            </p>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center items-start">
-            {projects.map((project, index) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                index={index}
-                open={openProjects[index]}
-                onToggle={() => handleToggleProject(index)}
-              />
-            ))}
-          </div>
-        </div>
-      </Section>
       {/* PM Portfolio Section */}
       <Section id="pm-portfolio" className="py-10">
         <div className="max-w-4xl mx-auto px-4">
@@ -454,82 +344,39 @@ export default function Home() {
           </div>
         </div>
       </Section>
-
-      {/* Resume Section */}
-      <Section id="resume" className="py-10 bg-card/30">
-        <div className="container mx-auto px-2 sm:px-4 max-w-4xl">
+      {/* Projects Section */}
+      <Section id="projects" className="py-10">
+        <div className="max-w-4xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 accent-gold">
-              <FileText className="inline h-8 w-8 mr-3 text-primary" />
-              Resume
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 accent-gold">
+              <Code className="inline h-8 w-8 mr-3 accent-gold" />
+              Coding Projects
             </h2>
-            <p className="text-base md:text-lg max-w-2xl mx-auto">
-              Download my resume or view it below
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              A showcase of technical projects I&apos;ve built
             </p>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
-          >
-            <Card
-              className={`border-border bg-card/50 backdrop-blur-sm rounded-8 transition-all duration-300 flex ${resumeOpen ? '' : 'items-center'}`}
-            >
-              <CardContent className="p-4 md:p-8">
-                <div className="flex flex-col items-center justify-center gap-4 mb-8 text-center h-full w-full">
-                  <Button
-                    size="sm"
-                    className="md:size-lg focus-ring rounded-8 glow-green"
-                    asChild
-                  >
-                    <motion.a
-                      href={profile.resumeUrl}
-                      download
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="inline-flex items-center space-x-2"
-                    >
-                      <Download className="h-5 w-5" />
-                      <span>Download Resume</span>
-                    </motion.a>
-                  </Button>
-                  <Button
-                    variant="default"
-                    size="sm"
-                    className="rounded-8 glow-green hidden md:block"
-                    onClick={() => setResumeOpen((open) => !open)}
-                    aria-expanded={resumeOpen}
-                    aria-controls="resume-iframe"
-                  >
-                    {resumeOpen ? "Hide Resume" : "View Resume"}
-                  </Button>
-                </div>
-                {resumeOpen && (
-                  <div
-                    id="resume-iframe"
-                    className="aspect-[8.5/11] bg-muted rounded-lg border border-border transition-all duration-300 overflow-hidden"
-                  >
-                    <iframe
-                      src={`${profile.resumeUrl}#toolbar=0`}
-                      width="100%"
-                      height="100%"
-                      className="rounded-lg"
-                      title="Resume PDF"
-                    />
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center items-start">
+            {projects.map((project, index) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                index={index}
+                open={openProjects[index]}
+                onToggle={() => handleToggleProject(index)}
+              />
+            ))}
+          </div>
         </div>
       </Section>
 
+      {/* Resume Section */}
+      {/* Removed standalone Resume section, now in About */}
 
 
       <Footer />

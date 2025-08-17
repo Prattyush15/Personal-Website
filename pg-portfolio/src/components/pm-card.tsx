@@ -93,7 +93,7 @@ export function PMCard({ item, index, open, onToggle }: PMCardProps) {
                       Read More
                     </button>
                   </DialogTrigger>
-                  <DialogContent className="max-w-xl w-full h-[400px] bg-background/90 backdrop-blur-lg rounded-2xl shadow-2xl border border-border p-8 flex flex-col items-center text-left overflow-y-auto">
+                  <DialogContent className="max-w-xl w-full h-[400px] bg-white dark:bg-background/90 text-black dark:text-foreground backdrop-blur-lg rounded-2xl shadow-2xl border border-border p-8 flex flex-col items-center text-left overflow-y-auto">
                     <DialogHeader className="w-full flex flex-col items-center">
                       <DialogTitle className="text-2xl font-bold mb-2 text-foreground">
                         {item.title}
@@ -103,11 +103,11 @@ export function PMCard({ item, index, open, onToggle }: PMCardProps) {
                       </DialogTitle>
                       <div className="w-16 h-1 bg-primary/40 rounded-full mb-4" />
                     </DialogHeader>
-                    <DialogDescription className="text-base text-muted-foreground leading-relaxed text-left">
+                    <div className="text-base text-muted-foreground leading-relaxed text-left">
                       {item.longDescription.split(/\n\n+/).map((para, idx) => (
                         <p key={idx} className="mb-4 last:mb-0">{para}</p>
                       ))}
-                    </DialogDescription>
+                    </div>
                   </DialogContent>
                 </Dialog>
               </div>
