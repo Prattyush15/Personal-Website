@@ -287,7 +287,7 @@ export default function Home() {
                   <TooltipContent side="bottom" sideOffset={16}>Developed analytics to track KPIs and inform product decisions</TooltipContent>
                 </Tooltip>
               </div>
-              <p className="text-xs text-muted-foreground mt-1 hidden md:block">(Hover or tap a skill to see more info)</p>
+              <p className="text-xs text-muted-foreground mt-1 hidden md:block">(Hover a skill to see more info)</p>
             </motion.div>
             {/* Top Technical Skills */}
             <motion.div
@@ -357,7 +357,7 @@ export default function Home() {
                   <TooltipContent side="bottom" sideOffset={16}>Integrated machine learning models into production-ready pipelines</TooltipContent>
                 </Tooltip>
               </div>
-              <p className="text-xs text-muted-foreground mt-1 hidden md:block">(Hover or tap a skill to see more info)</p>
+              <p className="text-xs text-muted-foreground mt-1 hidden md:block">(Hover a skill to see more info)</p>
             </motion.div>
           </div>
         </div>
