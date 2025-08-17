@@ -1,22 +1,22 @@
 # Prattyush Giriraj - Portfolio
 
-A modern, responsive personal portfolio built with Next.js 14, TypeScript, and Tailwind CSS. Features smooth animations, dark theme, and a complete product management portfolio showcase.
+A modern, responsive personal portfolio built with Next.js, TypeScript, and Tailwind CSS. Features smooth animations, dark theme, and a complete product management portfolio showcase.
 
 ## Features
 
-- Modern Tech Stack: Next.js 14 (App Router), TypeScript, Tailwind CSS
+- Modern Tech Stack: Next.js (App Router), TypeScript, Tailwind CSS
 - Responsive Design: Mobile-first approach with seamless desktop experience
 - Dark Theme: Custom dark theme with beautiful color palette
 - Smooth Animations: Framer Motion animations and smooth scroll behavior
 - Component Library: shadcn/ui components for consistent design
 - SEO Optimized: Complete meta tags, sitemap, and robots.txt
 - Contact Form: Functional contact form with validation
-- PM Portfolio: Interactive case studies with Figma embeds
+- PM Portfolio: Interactive case studies with Figma prototype links
 - Performance: Optimized images and fonts for fast loading
 
 ## Tech Stack
 
-- [Next.js 14](https://nextjs.org/) - React framework with App Router
+- [Next.js](https://nextjs.org/) - React framework with App Router
 - [TypeScript](https://www.typescriptlang.org/) - Type safety
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first styling
 - [shadcn/ui](https://ui.shadcn.com/) - Component library
@@ -29,7 +29,7 @@ A modern, responsive personal portfolio built with Next.js 14, TypeScript, and T
 
 ### Color Palette
 - Background: `#0c0f0f` - Deep dark background
-- Surface: `#121515` - Card and section backgrounds  
+- Surface: `#121515` - Card and section backgrounds
 - Text: `#e8f0ec` - Primary text color
 - Muted: `#a7b0ab` - Secondary text color
 - Primary: `#22c55e` - Green accent color
@@ -54,7 +54,7 @@ src/
 ├── components/            # React components
 │   ├── ui/               # shadcn/ui components
 │   ├── contact-form.tsx  # Contact form with validation
-│   ├── figma-embed.tsx   # Figma prototype embeds
+│   ├── figma-embed.tsx   # (Legacy) Figma prototype embeds
 │   ├── footer.tsx        # Site footer
 │   ├── header.tsx        # Navigation header
 │   ├── pm-card.tsx       # PM portfolio cards
@@ -137,21 +137,35 @@ To add Figma prototypes to PM portfolio:
 
 ### Vercel (Recommended)
 
+#### Deploy via GitHub
 1. **Push to GitHub**
    ```bash
    git add .
    git commit -m "Initial portfolio"
    git push origin main
    ```
-
 2. **Deploy to Vercel**
    - Visit [vercel.com](https://vercel.com)
    - Import your GitHub repository
    - Deploy with one click
 
-3. **Custom Domain** (Optional)
-   - Add your custom domain in Vercel dashboard
-   - Update the `metadataBase` in `src/app/layout.tsx`
+#### Deploy via Vercel CLI
+1. **Install Vercel CLI**
+   ```bash
+   npm install -g vercel
+   ```
+2. **Login to Vercel**
+   ```bash
+   vercel login
+   ```
+3. **Deploy**
+   ```bash
+   vercel --prod
+   ```
+
+#### Custom Domain (Optional)
+- Add your custom domain in the Vercel dashboard
+- Update the `metadataBase` in `src/app/layout.tsx`
 
 ### Other Platforms
 The portfolio is a standard Next.js app and can be deployed to:
