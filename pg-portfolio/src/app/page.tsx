@@ -297,7 +297,7 @@ export default function Home() {
               Professional Experience
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              My journey through product management and data engineering/analytics internships
+              My journey through product management and data internships
             </p>
           </motion.div>
           <div className="max-w-4xl mx-auto grid grid-cols-1 gap-8">
