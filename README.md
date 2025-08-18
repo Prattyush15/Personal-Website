@@ -2,6 +2,10 @@
 
 A modern, responsive personal portfolio built with Next.js, TypeScript, and Tailwind CSS. Features smooth animations, dark theme, and a complete product management portfolio showcase.
 
+## About
+
+A quick look at me and my background.
+
 ## Features
 
 - Modern Tech Stack: Next.js (App Router), TypeScript, Tailwind CSS
