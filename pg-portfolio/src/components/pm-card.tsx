@@ -68,7 +68,13 @@ export function PMCard({ item, index, open, onToggle }: PMCardProps) {
               <div className="flex flex-col gap-4 mb-4">
                 {item.figmaFileKey && (
                   <a
-                    href={`https://www.figma.com/file/${item.figmaFileKey}`}
+                    href={
+                      item.figmaFileKey.startsWith('http') || item.figmaFileKey.startsWith('proto/')
+                        ? (item.figmaFileKey.startsWith('proto/')
+                            ? `https://www.figma.com/${item.figmaFileKey}`
+                            : item.figmaFileKey)
+                        : `https://www.figma.com/file/${item.figmaFileKey}`
+                    }
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-4 py-2 bg-card border border-border text-foreground font-semibold rounded-md shadow hover:bg-accent transition-colors focus:outline-none focus:ring-2 focus:ring-primary w-fit"

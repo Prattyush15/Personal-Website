@@ -14,10 +14,10 @@ export interface PMPortfolioItem {
 export const pmPortfolio: PMPortfolioItem[] = [
   {
     id: "switchboard-observability",
-    title: "Switchboard Observability",
+    title: "Switchboard Pipeline Observability",
     description: "Designed and launched a real-time observability platform for data producers, enabling teams to monitor pipeline health, manage alerts, and streamline incident response workflows across ingestion, transformation, and orchestration layers.",
     summary: "Led the design and development of a critical observability platform for data infrastructure teams, focusing on real-time monitoring, alert management, and incident response workflows.",
-    figmaFileKey: "4KrjE2aJKxnK2eVTeVV8rk", // Added actual Figma file key
+    figmaFileKey: "proto/4KrjE2aJKxnK2eVTeVV8rk/Pipeline_Observability_Prototype?node-id=0-1&t=tMuxpYv4ghQqZfiH-1", // Changed to prototype link
     category: "product",
     tags: [],
     thumbnail: "/images/pm/switchboard-thumb.png",
@@ -37,7 +37,7 @@ The success of this project also opened the door to a second initiative—a pers
     title: "Switchboard Personalized Dashboard",
     description: "Designed and built a personalized dashboard for data professionals, reducing cognitive load and improving productivity through intelligent defaults and customization.",
     summary: "Designed and built a personalized dashboard for data professionals, focusing on reducing cognitive load and improving productivity through intelligent defaults and customization.",
-    figmaFileKey: "7fhVQkLvh9AFASFVbaq2LV", // Added actual Figma file key
+    figmaFileKey: "proto/7fhVQkLvh9AFASFVbaq2LV/Switchboard-Personalized-Dashboard?node-id=0-1&t=dLelTkSqfOFR44wI-1", // Updated to prototype link
     category: "product",
     tags: [],
     thumbnail: "/images/pm/library-thumb.png",
